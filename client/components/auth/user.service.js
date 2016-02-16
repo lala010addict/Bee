@@ -5,24 +5,23 @@
 function UserResource($resource) {
   return $resource('/api/users/:id/:controller', {
     id: '@_id'
-  },
-  {
+  }, {
     changePassword: {
       method: 'PUT',
       params: {
-        controller:'password'
+        controller: 'password'
       }
     },
     get: {
       method: 'GET',
       params: {
-        id:'me'
+        id: 'me'
       }
     }
   });
 }
 
-angular.module('thesisApp.auth')
+angular.module('beeApp.auth')
   .factory('User', UserResource);
 
 })();

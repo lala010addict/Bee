@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('thesisApp.admin', [
-  'thesisApp.auth',
+angular.module('beeApp.admin', [
+  'beeApp.auth',
   'ui.router'
 ]);

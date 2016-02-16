@@ -6,7 +6,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   var state;
   return {
     // Add authorization token to headers
-    request: function(config) {
+    request(config) {
       config.headers = config.headers || {};
       if ($cookies.get('token') && Util.isSameOrigin(config.url)) {
         config.headers.Authorization = 'Bearer ' + $cookies.get('token');
@@ -15,7 +15,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
     },
 
     // Intercept 401s and redirect you to login
-    responseError: function(response) {
+    responseError(response) {
       if (response.status === 401) {
         (state || (state = $injector.get('$state'))).go('login');
         // remove any stale tokens
@@ -26,7 +26,7 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
   };
 }
 
-angular.module('thesisApp.auth')
+angular.module('beeApp.auth')
   .factory('authInterceptor', authInterceptor);
 
 })();

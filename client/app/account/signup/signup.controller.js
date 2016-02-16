@@ -39,5 +39,5 @@ class SignupController {
   }
 }
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .controller('SignupController', SignupController);

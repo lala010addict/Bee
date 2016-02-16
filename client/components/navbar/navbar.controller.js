@@ -17,5 +17,5 @@ class NavbarController {
   }
 }
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .controller('NavbarController', NavbarController);

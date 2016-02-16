@@ -30,7 +30,7 @@ class MainController {
   }
 }
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .controller('MainController', MainController);
 
 })();

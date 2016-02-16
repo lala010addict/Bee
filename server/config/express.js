@@ -21,7 +21,7 @@ import connectMongo from 'connect-mongo';
 import mongoose from 'mongoose';
 var mongoStore = connectMongo(session);
 
-module.exports = function(app) {
+export default function(app) {
   var env = app.get('env');
 
   app.set('views', config.root + '/server/views');
@@ -43,7 +43,7 @@ module.exports = function(app) {
     resave: false,
     store: new mongoStore({
       mongooseConnection: mongoose.connection,
-      db: 'thesis'
+      db: 'bee'
     })
   }));
 
@@ -84,4 +84,4 @@ module.exports = function(app) {
     app.use(morgan('dev'));
     app.use(errorHandler()); // Error handler - has to be last
   }
-};
+}

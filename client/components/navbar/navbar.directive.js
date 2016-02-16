@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .directive('navbar', () => ({
     templateUrl: 'components/navbar/navbar.html',
     restrict: 'E',

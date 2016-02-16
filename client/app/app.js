@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('thesisApp', [
-  'thesisApp.auth',
-  'thesisApp.admin',
-  'thesisApp.constants',
+angular.module('beeApp', [
+  'beeApp.auth',
+  'beeApp.admin',
+  'beeApp.constants',
   'ngCookies',
   'ngResource',
   'ngSanitize',

@@ -6,6 +6,7 @@
 
 import express from 'express';
 import mongoose from 'mongoose';
+mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
 
@@ -32,7 +33,7 @@ require('./routes')(app);
 
 // Start server
 function startServer() {
-  server.listen(config.port, config.ip, function() {
+  app.angularFullstack = server.listen(config.port, config.ip, function() {
     console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
   });
 }

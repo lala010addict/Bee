@@ -6,16 +6,14 @@
  * The Util service is for thin, globally reusable, utility functions
  */
 function UtilService($window) {
-
   var Util = {
-
     /**
      * Return a callback or noop function
      *
      * @param  {Function|*} cb - a 'potential' function
      * @return {Function}
      */
-    safeCb: function(cb) {
+    safeCb(cb) {
       return (angular.isFunction(cb)) ? cb : angular.noop;
     },
 
@@ -25,9 +23,15 @@ function UtilService($window) {
      * @param  {String} url - the url to parse
      * @return {Object}     - the parsed url, anchor element
      */
-    urlParse: function(url) {
+    urlParse(url) {
       var a = document.createElement('a');
       a.href = url;
+
+      // Special treatment for IE, see http://stackoverflow.com/a/13405933 for details
+      if (a.host === '') {
+        a.href = a.href;
+      }
+
       return a;
     },
 
@@ -38,7 +42,7 @@ function UtilService($window) {
      * @param  {String|String[]}  [origins] - additional origins to test against
      * @return {Boolean}                    - true if url is same origin
      */
-    isSameOrigin: function(url, origins) {
+    isSameOrigin(url, origins) {
       url = Util.urlParse(url);
       origins = (origins && [].concat(origins)) || [];
       origins = origins.map(Util.urlParse);
@@ -50,13 +54,12 @@ function UtilService($window) {
       });
       return (origins.length >= 1);
     }
-
   };
 
   return Util;
 }
 
-angular.module('thesisApp.util')
+angular.module('beeApp.util')
   .factory('Util', UtilService);
 
 })();

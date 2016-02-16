@@ -1,12 +1,10 @@
 'use strict';
 
 class SettingsController {
-  //start-non-standard
-  errors = {};
-  submitted = false;
-  //end-non-standard
-
   constructor(Auth) {
+    this.errors = {};
+    this.submitted = false;
+
     this.Auth = Auth;
   }
 
@@ -27,5 +25,5 @@ class SettingsController {
   }
 }
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .controller('SettingsController', SettingsController);

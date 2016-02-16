@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('thesisApp')
+angular.module('beeApp')
   .config(function($stateProvider) {
     $stateProvider
       .state('main', {

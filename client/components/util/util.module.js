@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('thesisApp.util', []);
+angular.module('beeApp.util', []);

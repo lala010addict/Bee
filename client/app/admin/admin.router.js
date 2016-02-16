@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('thesisApp.admin')
+angular.module('beeApp.admin')
   .config(function($stateProvider) {
     $stateProvider
       .state('admin', {

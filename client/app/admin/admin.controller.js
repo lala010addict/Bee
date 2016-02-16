@@ -3,7 +3,6 @@
 (function() {
 
 class AdminController {
-
   constructor(User) {
     // Use the User $resource to fetch all users
     this.users = User.query();
@@ -15,7 +14,7 @@ class AdminController {
   }
 }
 
-angular.module('thesisApp.admin')
+angular.module('beeApp.admin')
   .controller('AdminController', AdminController);
 
 })();
